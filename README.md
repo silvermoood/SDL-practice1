@@ -1,24 +1,28 @@
-# SDL — Первое практическое задание
+# Практическое задание №1
 
-## Структура
+Работа с PostgreSQL 18 в Docker
 
-* `practice1/Dockerfile` — образ PostgreSQL 18
-* `practice1/compose.yml` — запуск PostgreSQL и Adminer
-* `practice1/postgresql.conf` — настройки PostgreSQL
-* `practice1/app/main.py` — приложение для подключения к базе данных
-* `practice1/app/config.json` — настройки подключения
-* `practice1/requirements.txt` — зависимость Python
+В проекте используются:
 
-Для запуска контейнеров в папке `practice1` и выполнить
+* PostgreSQL 18
+* Docker
+* Adminer
+* Python и psycopg
+
+Запустить Docker-контейнеры:
 
 ```text
 docker compose up -d --build
 ```
 
-Adminer доступен по адресу `http://localhost:8080`.
+Adminer открывается по адресу `http://localhost:8080`
 
-Для запуска приложения:
+Для запуска программы:
 
 ```text
 python app/main.py
 ```
+
+Программа запрашивает логин и пароль, подключается к базе данных и выводит версию PostgreSQL, при этом пароль не хранится в файле конфигурации
+
+Настройки подключения находятся в `app/config.json`
